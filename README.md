@@ -16,7 +16,7 @@ npm run preview   # tayyor buildni lokal ko‘rish
 Barcha ma’lumot va matnlar **`src/data/wedding.js`** faylida: ismlar, sana va vaqt mintaqasi, to‘yxona, xarita havolalari, to‘yona kartasi, SEO. Komponentlar ichida to‘yga oid matn yo‘q.
 
 Taklifnoma rasmsiz, minimalist dizaynda: arka ramka, monogramma va o‘zbek me’morchiligidagi
-sakkiz qirrali yulduz (girih) asosidagi naqsh, hoshiya va ajratgichlar (`src/assets/decor/*.svg`). Yagona rasm —
+sakkiz qirrali yulduz (girih) asosidagi hoshiya va ajratgichlar (`src/assets/decor/*.svg`). Yagona rasm —
 `public/images/og-image.jpg` (1200×630): havola Telegram va boshqa ilovalarda yuborilganda chiqadi.
 
 ### Mehmonlarga yuborish
@@ -39,7 +39,7 @@ src/
 ├── components/  HeroSection (muqova), CoupleSection (taklif matni), DateSection,
 │                Countdown, VenueSection, GiftSection (to‘yona), ClosingSection,
 │                LanguageSwitch, SectionDivider, SectionReveal
-├── assets/decor/ girih naqshi, hoshiya, yulduz va bo‘lim ikonalari (SVG)
+├── assets/decor/ koshin hoshiya, yulduz va bo‘lim ikonalari (SVG)
 ├── data/        wedding.js — yagona ma’lumot manbai
 ├── i18n.js      til (uz/ru), mehmon ismi (?m=)
 ├── utils/       date.js — sana va taqvim (uz/ru); links.js — xarita, taksi, kalendar havolalari
@@ -51,4 +51,4 @@ src/
 
 ## Mualliflik
 
-Shriftlar: Playfair Display (ismlar, sarlavhalar) va Montserrat (matn) — Google Fonts, SIL Open Font License.
+Shriftlar: Great Vibes (ismlar), Cormorant Garamond (sarlavhalar, sana) va Montserrat (matn) — Google Fonts, SIL Open Font License.

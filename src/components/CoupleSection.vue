@@ -42,21 +42,23 @@ const greeting = computed(() =>
   margin-bottom: 0.75rem;
   border: 1px solid var(--c-champagne);
   border-radius: 50%;
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-family: var(--font-script);
+  font-size: 2rem;
   line-height: 1;
 }
 
 .monogram__amp {
-  font-family: var(--font-sans);
-  font-size: 0.45em;
+  font-family: var(--font-serif);
+  font-size: 0.5em;
+  font-weight: 500;
   color: var(--c-gold);
 }
 
 .invitation__greeting {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-style: italic;
+  font-weight: 500;
   overflow-wrap: anywhere;
 }
 </style>

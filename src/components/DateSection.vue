@@ -99,14 +99,15 @@ const calendar = computed(() =>
 .date__day {
   padding-inline: 1.25rem;
   font-family: var(--font-serif);
-  font-size: 4.25rem;
-  font-weight: 400;
+  font-size: 4.75rem;
+  font-weight: 500;
   line-height: 1;
 }
 
 .date__meta {
   font-family: var(--font-serif);
-  font-size: var(--fs-lead);
+  font-size: 1.2rem;
+  font-weight: 500;
   color: var(--c-ink-soft);
 }
 
@@ -119,8 +120,9 @@ const calendar = computed(() =>
 .calendar__title {
   margin-bottom: 0.9rem;
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-style: italic;
+  font-weight: 500;
 }
 
 .calendar__grid {

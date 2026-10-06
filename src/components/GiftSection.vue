@@ -101,8 +101,9 @@ onBeforeUnmount(() => clearTimeout(feedbackTimer))
   top: 1.25rem;
   right: 1.5rem;
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-style: italic;
+  font-weight: 500;
   color: var(--c-gold-deep);
 }
 

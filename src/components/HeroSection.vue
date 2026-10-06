@@ -46,7 +46,7 @@ const label = computed(() => (guestName ? fill(t.value.cover.guestLabel, { name:
   display: flex;
   padding: calc(4.25rem + var(--safe-top)) 1.25rem calc(1.25rem + var(--safe-bottom));
   overflow-y: auto;
-  background: var(--girih), var(--c-cream);
+  background: var(--c-cream);
 }
 
 /* Bosma taklifnomadagidek arka: tashqi va ichki ingichka chiziq. */
@@ -124,7 +124,7 @@ html.fonts-ready .cover__content {
   }
 
   .cover__names {
-    font-size: 2.4rem;
+    font-size: 2.9rem;
   }
 }
 

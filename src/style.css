@@ -11,14 +11,15 @@
   --c-ink-soft: #5c5149;
   --c-line: rgba(43, 36, 32, 0.14);
 
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-script: 'Great Vibes', 'Brush Script MT', cursive;
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Montserrat', 'Helvetica Neue', Arial, system-ui, sans-serif;
 
   --fs-eyebrow: 0.72rem;
   --fs-small: 0.875rem;
   --fs-lead: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
-  --fs-title: clamp(1.6rem, 1.4rem + 1vw, 2rem);
-  --fs-names: clamp(2.75rem, 2.35rem + 2vw, 3.5rem);
+  --fs-title: clamp(1.9rem, 1.65rem + 1.2vw, 2.4rem);
+  --fs-names: clamp(3.4rem, 2.9rem + 2.6vw, 4.5rem);
 
   --tracking-wide: 0.28em;
   --tracking-mid: 0.14em;
@@ -30,8 +31,7 @@
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 
-  /* O‘zbek me’morchiligidagi girih naqshi va koshin hoshiya (src/assets/decor) */
-  --girih: url('./assets/decor/pattern-girih.svg') 0 0 / 112px;
+  /* O‘zbek me’morchiligidagi koshin hoshiya (src/assets/decor) */
   --band: url('./assets/decor/band.svg');
 }
 
@@ -58,7 +58,7 @@ html.is-locked {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--girih), var(--c-cream);
+  background: var(--c-cream);
   color: var(--c-ink);
   font-family: var(--font-sans);
   font-size: 0.9375rem;
@@ -118,34 +118,35 @@ button {
 .title {
   font-family: var(--font-serif);
   font-size: var(--fs-title);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.25;
   text-wrap: balance;
 }
 
+/* Ismlar — nafis yozma shrift */
 .names {
-  font-family: var(--font-serif);
+  font-family: var(--font-script);
   font-size: var(--fs-names);
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 
 .names > span {
   display: block;
 }
 
-/* Oddiy, hammaga tanish "&" — serif shriftlardagi bezakli shakl o‘rniga. */
+/* Yozma shriftdagi "&" chalkash — aniq tanilib turadigan tik serif shakli. */
 .names .names__amp {
-  margin-block: 0.35em;
-  font-family: var(--font-sans);
-  font-size: 0.4em;
+  margin-block: 0.15em;
+  font-family: var(--font-serif);
+  font-size: 0.42em;
   font-style: normal;
+  font-weight: 500;
   line-height: 1.2;
   color: var(--c-gold);
 }
 
-/* Oddiy matn — toza sans; Playfair faqat ism, sarlavha va raqamlarda. */
+/* Oddiy matn — toza sans; serif va yozma shriftlar faqat ism, sarlavha va raqamlarda. */
 .lead {
   font-size: var(--fs-lead);
   line-height: 1.85;

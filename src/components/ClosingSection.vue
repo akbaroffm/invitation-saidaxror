@@ -30,13 +30,14 @@ import { coupleNames, t } from '../i18n.js'
 .closing__signature {
   margin-top: 0.5rem;
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-style: italic;
+  font-weight: 500;
   color: var(--c-ink-soft);
 }
 
 .closing__names {
-  font-size: 3rem;
+  font-size: 3.4rem;
 }
 
 .closing__hosts {
