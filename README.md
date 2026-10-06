@@ -36,7 +36,8 @@ sakkiz qirrali yulduz (girih) asosidagi hoshiya va ajratgichlar (`src/assets/dec
 
 ```
 src/
-├── components/  HeroSection (muqova), CoupleSection (taklif matni), DateSection,
+├── components/  HeroSection (eshik: muhr va ochiladigan tavaqalar), CoverFace (muqova ko‘rinishi),
+│                CoupleSection (taklif matni), DateSection,
 │                Countdown, VenueSection, GiftSection (to‘yona), ClosingSection,
 │                LanguageSwitch, SectionDivider, SectionReveal
 ├── assets/decor/ koshin hoshiya, yulduz va bo‘lim ikonalari (SVG)

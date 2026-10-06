@@ -11,24 +11,39 @@ import SectionDivider from '../components/SectionDivider.vue'
 import { weddingData } from '../data/wedding.js'
 
 const LOCK_CLASS = 'is-locked'
+/** Muhr tushishi va eshik ochilishi davomiyligi — HeroSection.vue dagi CSS bilan mos. */
+const DOOR_OPEN_MS = 3100
 
+const isOpening = ref(false)
 const isOpen = ref(false)
 const hasGiftCard = Boolean(weddingData.giftCard.number)
+let openTimer = null
 
 const setScrollLock = (locked) => document.documentElement.classList.toggle(LOCK_CLASS, locked)
 
-function openInvitation() {
-  window.scrollTo(0, 0)
+function finishOpening() {
   isOpen.value = true
   setScrollLock(false)
 }
 
+function openInvitation() {
+  if (isOpening.value) return
+  window.scrollTo(0, 0)
+  isOpening.value = true
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  openTimer = setTimeout(finishOpening, prefersReducedMotion ? 0 : DOOR_OPEN_MS)
+}
+
 onMounted(() => setScrollLock(true))
-onBeforeUnmount(() => setScrollLock(false))
+onBeforeUnmount(() => {
+  clearTimeout(openTimer)
+  setScrollLock(false)
+})
 </script>
 
 <template>
-  <main class="sheet" :class="{ 'is-hidden': !isOpen }" :inert="!isOpen || undefined">
+  <!-- Sahifa eshik ortida tayyor turadi va tavaqalar ochilganda ko‘rinadi. -->
+  <main class="sheet" :inert="!isOpen || undefined">
     <CoupleSection />
     <SectionDivider />
     <DateSection />
@@ -42,9 +57,7 @@ onBeforeUnmount(() => setScrollLock(false))
     <ClosingSection />
   </main>
 
-  <Transition name="cover">
-    <HeroSection v-if="!isOpen" @open="openInvitation" />
-  </Transition>
+  <HeroSection v-if="!isOpen" :opening="isOpening" @open="openInvitation" />
 
   <LanguageSwitch />
 </template>
@@ -61,12 +74,6 @@ onBeforeUnmount(() => setScrollLock(false))
     var(--band) 0 4.5rem / auto 1.5rem repeat-x,
     var(--band) 0 calc(100% - 1.25rem) / auto 1.5rem repeat-x,
     var(--c-ivory);
-  /* Muqova to‘liq so‘ngach sahifa paydo bo‘ladi — ikki tasvir ustma-ust tushmaydi. */
-  transition: opacity 0.9s var(--ease) 0.7s;
-}
-
-.sheet.is-hidden {
-  opacity: 0;
 }
 
 .sheet :deep(.section) {
@@ -86,13 +93,5 @@ onBeforeUnmount(() => setScrollLock(false))
   .sheet {
     border-inline: 1px solid var(--c-line);
   }
-}
-
-.cover-leave-active {
-  transition: opacity 0.7s var(--ease);
-}
-
-.cover-leave-to {
-  opacity: 0;
 }
 </style>
