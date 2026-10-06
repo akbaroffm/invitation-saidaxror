@@ -44,9 +44,10 @@ export const weddingData = {
   seo: {
     // Sayt joylashtirilgach domenni yozing (masalan, 'https://saidaxror-sevara.uz'),
     // shunda Telegram va boshqa ilovalar havola rasmini to‘g‘ri ko‘rsatadi.
-    siteUrl: '',
+    siteUrl: 'https://invitation-saidaxror.vercel.app',
     // Telegram va boshqa ilovalarda havola bilan chiqadigan rasm (1200×630).
-    ogImage: '/images/og-image.jpg',
+    // Rasm almashtirilsa, `v` ni oshiring — ilovalar uni yangi rasm deb qabul qiladi.
+    ogImage: '/images/og-image.jpg?v=2',
   },
 
   // Har bir til uchun matnlar. {name} — mehmon ismi bilan almashtiriladi.
