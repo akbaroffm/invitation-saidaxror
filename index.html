@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#fbf8f3" />
+
+    <!-- {{ }} ichidagi qiymatlar src/data/wedding.js dan olinadi (vite.config.js ga qarang). -->
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uz_UZ" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:image" content="{{ogImage}}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="{{siteUrl}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{title}}" />
+    <meta name="twitter:description" content="{{description}}" />
+    <meta name="twitter:image" content="{{ogImage}}" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Muqova rasmi birinchi ko‘rinadigan eng katta element — ilova yuklanmasdan oldin yuklay boshlaymiz. -->
+    <link rel="preload" as="image" href="{{heroImageMobile}}" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="{{heroImage}}" media="(min-width: 768px)" fetchpriority="high" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>Taklifnomani ko‘rish uchun brauzeringizda JavaScript’ni yoqing.</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+/* ==========================================================================
+   Dizayn tokenlari
+   ========================================================================== */
+:root {
+  --c-ivory: #fbf8f3;
+  --c-cream: #f3ece1;
+  --c-champagne: #d6c1a0;
+  --c-gold: #b0915f;
+  --c-gold-deep: #86683f;
+  --c-ink: #2b2420;
+  --c-ink-soft: #5c5149;
+  --c-line: rgba(43, 36, 32, 0.14);
+
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-sans: 'Jost', 'Helvetica Neue', Arial, system-ui, sans-serif;
+
+  --fs-eyebrow: 0.72rem;
+  --fs-small: 0.875rem;
+  --fs-lead: clamp(1.15rem, 1.05rem + 0.4vw, 1.3rem);
+  --fs-title: clamp(2rem, 1.7rem + 1.4vw, 2.6rem);
+  --fs-names: clamp(3rem, 2.4rem + 3vw, 4.25rem);
+
+  --tracking-wide: 0.3em;
+  --tracking-mid: 0.16em;
+
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --sheet-width: 34rem;
+  --gutter: clamp(1.5rem, 6vw, 3rem);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ==========================================================================
+   Asos
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Muqova ochilguncha sahifa aylantirilmaydi. */
+html.is-locked {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--c-cream);
+  color: var(--c-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+p,
+figure {
+  margin: 0;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--c-champagne);
+}
+
+:focus-visible {
+  outline: 1px solid var(--c-gold-deep);
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   Tipografiya
+   ========================================================================== */
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-gold-deep);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.names {
+  font-family: var(--font-serif);
+  font-size: var(--fs-names);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.names > span {
+  display: block;
+}
+
+.names .names__amp {
+  margin-block: 0.12em;
+  font-size: 0.5em;
+  line-height: 1.2;
+  color: var(--c-gold);
+}
+
+.lead {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  text-wrap: balance;
+}
+
+/* Ingichka chiziq — romb — ingichka chiziq */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  color: var(--c-gold);
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  width: 3.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.ornament > span {
+  width: 5px;
+  height: 5px;
+  border: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   Tugmalar
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--c-ink);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--c-ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-mid);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background-color 0.35s var(--ease),
+    color 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+
+.btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.btn:hover {
+  background: var(--c-ink);
+  color: var(--c-ivory);
+}
+
+.btn--solid {
+  background: var(--c-ink);
+  color: var(--c-ivory);
+}
+
+.btn--solid:hover {
+  border-color: var(--c-gold-deep);
+  background: var(--c-gold-deep);
+}
+
+/* ==========================================================================
+   Paydo bo‘lish animatsiyasi (SectionReveal.vue) — faqat shaffoflik, siljishsiz
+   ========================================================================== */
+.reveal {
+  transition: opacity 1.2s var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal:not(.is-visible) {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+  }
+}
