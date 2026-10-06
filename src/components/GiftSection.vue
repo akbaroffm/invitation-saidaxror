@@ -1,6 +1,7 @@
 <script setup>
 import { onBeforeUnmount, ref } from 'vue'
 import SectionReveal from './SectionReveal.vue'
+import sectionIcon from '../assets/decor/icon-gift.svg'
 import { weddingData } from '../data/wedding.js'
 import { t } from '../i18n.js'
 
@@ -40,6 +41,7 @@ onBeforeUnmount(() => clearTimeout(feedbackTimer))
 
 <template>
   <section class="section" aria-labelledby="gift-title">
+    <SectionReveal as="img" :src="sectionIcon" alt="" width="40" height="40" class="section-icon" aria-hidden="true" />
     <SectionReveal as="h2" id="gift-title" class="eyebrow">{{ t.gift.eyebrow }}</SectionReveal>
     <SectionReveal as="p" class="lead gift__text" :delay="100">{{ t.gift.text }}</SectionReveal>
 
@@ -99,7 +101,7 @@ onBeforeUnmount(() => clearTimeout(feedbackTimer))
   top: 1.25rem;
   right: 1.5rem;
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-style: italic;
   color: var(--c-gold-deep);
 }

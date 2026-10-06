@@ -11,17 +11,17 @@
   --c-ink-soft: #5c5149;
   --c-line: rgba(43, 36, 32, 0.14);
 
-  --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
-  --font-sans: 'Jost', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Montserrat', 'Helvetica Neue', Arial, system-ui, sans-serif;
 
   --fs-eyebrow: 0.72rem;
   --fs-small: 0.875rem;
-  --fs-lead: clamp(1.15rem, 1.05rem + 0.4vw, 1.3rem);
-  --fs-title: clamp(2rem, 1.7rem + 1.4vw, 2.6rem);
-  --fs-names: clamp(3rem, 2.4rem + 3vw, 4.25rem);
+  --fs-lead: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --fs-title: clamp(1.6rem, 1.4rem + 1vw, 2rem);
+  --fs-names: clamp(2.75rem, 2.35rem + 2vw, 3.5rem);
 
-  --tracking-wide: 0.3em;
-  --tracking-mid: 0.16em;
+  --tracking-wide: 0.28em;
+  --tracking-mid: 0.14em;
 
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
 
@@ -29,6 +29,10 @@
   --gutter: clamp(1.5rem, 6vw, 3rem);
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* O‘zbek me’morchiligidagi girih naqshi va koshin hoshiya (src/assets/decor) */
+  --girih: url('./assets/decor/pattern-girih.svg') 0 0 / 112px;
+  --band: url('./assets/decor/band.svg');
 }
 
 /* ==========================================================================
@@ -54,11 +58,11 @@ html.is-locked {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--c-cream);
+  background: var(--girih), var(--c-cream);
   color: var(--c-ink);
   font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.9375rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -115,35 +119,36 @@ button {
   font-family: var(--font-serif);
   font-size: var(--fs-title);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.25;
   text-wrap: balance;
 }
 
 .names {
   font-family: var(--font-serif);
   font-size: var(--fs-names);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .names > span {
   display: block;
 }
 
-/* Tik (kursiv emas) shakl: kursiv Cormorant'da "&" eski "Et" ga o‘xshab, tanilmaydi. */
+/* Oddiy, hammaga tanish "&" — serif shriftlardagi bezakli shakl o‘rniga. */
 .names .names__amp {
-  margin-block: 0.12em;
-  font-size: 0.5em;
+  margin-block: 0.35em;
+  font-family: var(--font-sans);
+  font-size: 0.4em;
   font-style: normal;
   line-height: 1.2;
   color: var(--c-gold);
 }
 
+/* Oddiy matn — toza sans; Playfair faqat ism, sarlavha va raqamlarda. */
 .lead {
-  font-family: var(--font-serif);
   font-size: var(--fs-lead);
-  line-height: 1.55;
+  line-height: 1.85;
   color: var(--c-ink-soft);
   text-wrap: balance;
 }
@@ -173,6 +178,34 @@ button {
   transform: rotate(45deg);
 }
 
+/* Bo‘lim ikonasi (uzuklar, kalendar, manzil, sovg‘a) — ingichka chiziqli */
+.section-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Bo‘limlar orasidagi ajratgich: chiziq — sakkiz qirrali yulduz — chiziq */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  width: 3.5rem;
+  height: 1px;
+  background: var(--c-gold);
+  opacity: 0.5;
+}
+
+.divider img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 /* ==========================================================================
    Tugmalar
    ========================================================================== */
@@ -187,7 +220,7 @@ button {
   border-radius: 2px;
   background: transparent;
   color: var(--c-ink);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: var(--tracking-mid);
   text-transform: uppercase;

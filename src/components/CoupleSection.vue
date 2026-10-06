@@ -31,42 +31,31 @@ const greeting = computed(() =>
 </template>
 
 <style scoped>
-/* Ikki halqali monogramma — rasm o‘rnida */
+/* Ingichka halqadagi monogramma */
 .monogram {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem;
-  width: 6.5rem;
-  height: 6.5rem;
-  margin-bottom: 1rem;
+  gap: 0.3rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-bottom: 0.75rem;
   border: 1px solid var(--c-champagne);
   border-radius: 50%;
   font-family: var(--font-serif);
-  font-size: 2.1rem;
-  font-style: italic;
-  font-weight: 300;
+  font-size: 1.6rem;
   line-height: 1;
 }
 
-.monogram::before {
-  content: '';
-  position: absolute;
-  inset: 5px;
-  border: 1px solid rgba(176, 145, 95, 0.32);
-  border-radius: 50%;
-}
-
 .monogram__amp {
-  font-size: 0.55em;
-  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 0.45em;
   color: var(--c-gold);
 }
 
 .invitation__greeting {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-style: italic;
   overflow-wrap: anywhere;
 }

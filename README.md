@@ -13,18 +13,16 @@ npm run preview   # tayyor buildni lokal ko‘rish
 
 ## Sozlash
 
-Barcha ma’lumot va matnlar **`src/data/wedding.js`** faylida: ismlar, sana va vaqt mintaqasi, to‘yxona, xarita havolalari, musiqa, SEO. Komponentlar ichida to‘yga oid matn yo‘q.
+Barcha ma’lumot va matnlar **`src/data/wedding.js`** faylida: ismlar, sana va vaqt mintaqasi, to‘yxona, xarita havolalari, to‘yona kartasi, SEO. Komponentlar ichida to‘yga oid matn yo‘q.
 
-Taklifnoma rasmsiz, to‘liq tipografik dizaynda (arka ramka, monogramma). Yagona rasm —
+Taklifnoma rasmsiz, minimalist dizaynda: arka ramka, monogramma va o‘zbek me’morchiligidagi
+sakkiz qirrali yulduz (girih) asosidagi naqsh, hoshiya va ajratgichlar (`src/assets/decor/*.svg`). Yagona rasm —
 `public/images/og-image.jpg` (1200×630): havola Telegram va boshqa ilovalarda yuborilganda chiqadi.
-
-Musiqa: qo‘shiq faylini `public/music/toylar-muborak.mp3` nomi bilan joylang. Fayl bo‘lmasa, musiqa tugmasi ko‘rinmaydi. Tez yuklanishi uchun 128 kbps MP3 tavsiya etiladi.
 
 ### Mehmonlarga yuborish
 
 - **Shaxsiy havola:** oxiriga `?m=` va ismni qo‘shing — `https://sayt.uz/?m=Aziz aka`. Muqovada "Hurmatli Aziz aka", taklifda "Assalomu alaykum, hurmatli Aziz aka!" chiqadi. Telegram probelni o‘zi kodlaydi.
 - **Til:** mehmon yuqoridagi UZ / RU tugmasi bilan almashtiradi (tanlov eslab qolinadi) yoki havolaga `?lang=ru` qo‘shing.
-- **Musiqa:** mehmon pastki o‘ng burchakdagi tugma bilan o‘chiradi; o‘chirgan bo‘lsa, keyingi safar ham o‘zi yoqilmaydi.
 
 ### Ishga tushirishdan oldin
 
@@ -40,7 +38,8 @@ Musiqa: qo‘shiq faylini `public/music/toylar-muborak.mp3` nomi bilan joylang. 
 src/
 ├── components/  HeroSection (muqova), CoupleSection (taklif matni), DateSection,
 │                Countdown, VenueSection, GiftSection (to‘yona), ClosingSection,
-│                MusicPlayer, LanguageSwitch, SectionReveal
+│                LanguageSwitch, SectionDivider, SectionReveal
+├── assets/decor/ girih naqshi, hoshiya, yulduz va bo‘lim ikonalari (SVG)
 ├── data/        wedding.js — yagona ma’lumot manbai
 ├── i18n.js      til (uz/ru), mehmon ismi (?m=)
 ├── utils/       date.js — sana va taqvim (uz/ru); links.js — xarita, taksi, kalendar havolalari
@@ -52,4 +51,4 @@ src/
 
 ## Mualliflik
 
-Shriftlar: Cormorant Garamond va Jost — Google Fonts, SIL Open Font License.
+Shriftlar: Playfair Display (ismlar, sarlavhalar) va Montserrat (matn) — Google Fonts, SIL Open Font License.

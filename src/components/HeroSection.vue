@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { weddingData } from '../data/wedding.js'
 import { coupleNames, fill, guestName, locale, t } from '../i18n.js'
 import { getDateParts } from '../utils/date.js'
+import star from '../assets/decor/star.svg'
 
 defineEmits(['open'])
 
@@ -14,6 +15,7 @@ const label = computed(() => (guestName ? fill(t.value.cover.guestLabel, { name:
   <div class="cover" role="dialog" aria-modal="true" aria-labelledby="cover-names">
     <div class="cover__arch">
       <div class="cover__content">
+        <img :src="star" alt="" width="24" height="24" class="cover__star" aria-hidden="true" />
         <p class="eyebrow cover__label">{{ label }}</p>
 
         <p id="cover-names" class="names cover__names">
@@ -44,7 +46,7 @@ const label = computed(() => (guestName ? fill(t.value.cover.guestLabel, { name:
   display: flex;
   padding: calc(4.25rem + var(--safe-top)) 1.25rem calc(1.25rem + var(--safe-bottom));
   overflow-y: auto;
-  background: var(--c-cream);
+  background: var(--girih), var(--c-cream);
 }
 
 /* Bosma taklifnomadagidek arka: tashqi va ichki ingichka chiziq. */
@@ -63,10 +65,16 @@ const label = computed(() => (guestName ? fill(t.value.cover.guestLabel, { name:
 .cover__arch::before {
   content: '';
   position: absolute;
-  inset: 7px;
-  border: 1px solid rgba(176, 145, 95, 0.32);
+  inset: 6px;
+  border: 1px solid rgba(168, 135, 90, 0.28);
   border-radius: inherit;
   pointer-events: none;
+}
+
+.cover__star {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-bottom: -0.25rem;
 }
 
 .cover__content {
@@ -107,15 +115,16 @@ html.fonts-ready .cover__content {
 /* Past ekranli telefonlar (masalan, iPhone SE) */
 @media (max-height: 640px) {
   .cover__arch {
-    padding-block: 3.75rem 2.5rem;
+    padding-block: 3.25rem 2.25rem;
   }
+
 
   .cover__content {
     gap: 1.1rem;
   }
 
   .cover__names {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
 }
 

@@ -6,22 +6,18 @@ import DateSection from '../components/DateSection.vue'
 import VenueSection from '../components/VenueSection.vue'
 import GiftSection from '../components/GiftSection.vue'
 import ClosingSection from '../components/ClosingSection.vue'
-import MusicPlayer from '../components/MusicPlayer.vue'
 import LanguageSwitch from '../components/LanguageSwitch.vue'
+import SectionDivider from '../components/SectionDivider.vue'
 import { weddingData } from '../data/wedding.js'
-import { t } from '../i18n.js'
 
 const LOCK_CLASS = 'is-locked'
 
 const isOpen = ref(false)
-const musicPlayer = ref(null)
 const hasGiftCard = Boolean(weddingData.giftCard.number)
 
 const setScrollLock = (locked) => document.documentElement.classList.toggle(LOCK_CLASS, locked)
 
 function openInvitation() {
-  // Musiqa bosish ichida darhol boshlanadi — aks holda brauzer uni bloklaydi.
-  musicPlayer.value?.autoplay()
   window.scrollTo(0, 0)
   isOpen.value = true
   setScrollLock(false)
@@ -34,15 +30,15 @@ onBeforeUnmount(() => setScrollLock(false))
 <template>
   <main class="sheet" :class="{ 'is-hidden': !isOpen }" :inert="!isOpen || undefined">
     <CoupleSection />
-    <div class="ornament" aria-hidden="true"><span /></div>
+    <SectionDivider />
     <DateSection />
-    <div class="ornament" aria-hidden="true"><span /></div>
+    <SectionDivider />
     <VenueSection />
     <template v-if="hasGiftCard">
-      <div class="ornament" aria-hidden="true"><span /></div>
+      <SectionDivider />
       <GiftSection />
     </template>
-    <div class="ornament" aria-hidden="true"><span /></div>
+    <SectionDivider />
     <ClosingSection />
   </main>
 
@@ -51,14 +47,6 @@ onBeforeUnmount(() => setScrollLock(false))
   </Transition>
 
   <LanguageSwitch />
-
-  <MusicPlayer
-    ref="musicPlayer"
-    :src="weddingData.music.src"
-    :volume="weddingData.music.volume"
-    :labels="t.music"
-    :visible="isOpen"
-  />
 </template>
 
 <style scoped>
@@ -68,7 +56,11 @@ onBeforeUnmount(() => setScrollLock(false))
   min-height: 100vh;
   min-height: 100svh;
   margin-inline: auto;
-  background: var(--c-ivory);
+  /* Sahifa tepasi va pastida ingichka koshin hoshiya */
+  background:
+    var(--band) 0 4.5rem / auto 1.5rem repeat-x,
+    var(--band) 0 calc(100% - 1.25rem) / auto 1.5rem repeat-x,
+    var(--c-ivory);
   /* Muqova to‘liq so‘ngach sahifa paydo bo‘ladi — ikki tasvir ustma-ust tushmaydi. */
   transition: opacity 0.9s var(--ease) 0.7s;
 }
@@ -85,9 +77,9 @@ onBeforeUnmount(() => setScrollLock(false))
   text-align: center;
 }
 
-/* Birinchi bo‘lim til tugmasi ostida qolmasligi uchun. */
+/* Birinchi bo‘lim til tugmasi va yuqori hoshiya ostidan boshlanadi. */
 .sheet :deep(.section:first-child) {
-  padding-top: 5.5rem;
+  padding-top: 8rem;
 }
 
 @media (min-width: 600px) {

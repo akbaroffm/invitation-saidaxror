@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import Countdown from './Countdown.vue'
 import SectionReveal from './SectionReveal.vue'
+import sectionIcon from '../assets/decor/icon-calendar.svg'
 import { weddingData } from '../data/wedding.js'
 import { coupleNames, locale, t } from '../i18n.js'
 import { getDateParts, getWeddingMonth } from '../utils/date.js'
@@ -21,6 +22,7 @@ const calendar = computed(() =>
 
 <template>
   <section class="section" aria-labelledby="date-title">
+    <SectionReveal as="img" :src="sectionIcon" alt="" width="40" height="40" class="section-icon" aria-hidden="true" />
     <SectionReveal as="h2" id="date-title" class="eyebrow">{{ t.saveTheDate.eyebrow }}</SectionReveal>
 
     <SectionReveal class="date">
@@ -97,8 +99,8 @@ const calendar = computed(() =>
 .date__day {
   padding-inline: 1.25rem;
   font-family: var(--font-serif);
-  font-size: 4.75rem;
-  font-weight: 300;
+  font-size: 4.25rem;
+  font-weight: 400;
   line-height: 1;
 }
 
@@ -117,7 +119,7 @@ const calendar = computed(() =>
 .calendar__title {
   margin-bottom: 0.9rem;
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-style: italic;
 }
 

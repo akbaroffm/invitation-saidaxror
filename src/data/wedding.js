@@ -1,8 +1,8 @@
 /**
  * Taklifnomaning yagona ma’lumot manbai.
  *
- * Yangi taklifnoma uchun faqat shu faylni tahrirlang va /public/music dagi
- * qo‘shiqni hamda /public/images/og-image.jpg (havola rasmi) ni almashtiring. index.html dagi meta teglar
+ * Yangi taklifnoma uchun faqat shu faylni tahrirlang va kerak bo‘lsa
+ * /public/images/og-image.jpg (havola rasmi) ni almashtiring. index.html dagi meta teglar
  * build vaqtida shu fayldan (`defaultLocale` tili) olinadi — `seo` o‘zgarsa,
  * dev serverni qayta ishga tushiring.
  *
@@ -39,13 +39,6 @@ export const weddingData = {
     number: '8600 0000 0000 0000',
     holder: 'KARTA EGASI ISMI',
     system: 'Uzcard',
-  },
-
-  music: {
-    // Qo‘shiq faylini shu nom bilan public/music/ papkasiga joylang.
-    // Fayl topilmasa, musiqa tugmasi ko‘rsatilmaydi.
-    src: '/music/toylar-muborak.mp3',
-    volume: 0.6,
   },
 
   seo: {
@@ -109,10 +102,6 @@ export const weddingData = {
         // Bo‘sh qoldirilsa, ko‘rsatilmaydi.
         hosts: 'va ularning ota-onalari',
       },
-      music: {
-        play: 'Musiqani yoqish',
-        pause: 'Musiqani o‘chirish',
-      },
     },
 
     ru: {
@@ -162,10 +151,6 @@ export const weddingData = {
         message: 'С нетерпением ждём вас на нашей свадьбе!',
         signature: 'С уважением,',
         hosts: 'и их родители',
-      },
-      music: {
-        play: 'Включить музыку',
-        pause: 'Выключить музыку',
       },
     },
   },

@@ -2,12 +2,10 @@ import { weddingData } from './data/wedding.js'
 
 // Sahifada ishlatiladigan barcha shrift ko‘rinishlari.
 const FACES = [
-  '300 1em "Cormorant Garamond"',
-  'italic 300 1em "Cormorant Garamond"',
-  '400 1em "Cormorant Garamond"',
-  'italic 400 1em "Cormorant Garamond"',
-  '400 1em Jost',
-  '500 1em Jost',
+  '400 1em "Playfair Display"',
+  'italic 400 1em "Playfair Display"',
+  '400 1em Montserrat',
+  '500 1em Montserrat',
 ]
 
 /**

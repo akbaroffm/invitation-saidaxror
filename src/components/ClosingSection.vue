@@ -1,10 +1,12 @@
 <script setup>
 import SectionReveal from './SectionReveal.vue'
+import sectionIcon from '../assets/decor/icon-rings.svg'
 import { coupleNames, t } from '../i18n.js'
 </script>
 
 <template>
   <footer class="section closing">
+    <SectionReveal as="img" :src="sectionIcon" alt="" width="40" height="40" class="section-icon" aria-hidden="true" />
     <SectionReveal as="p" class="lead closing__message">{{ t.closing.message }}</SectionReveal>
     <SectionReveal as="p" class="closing__signature" :delay="150">{{ t.closing.signature }}</SectionReveal>
     <SectionReveal as="p" class="names closing__names" :delay="250">
@@ -28,13 +30,13 @@ import { coupleNames, t } from '../i18n.js'
 .closing__signature {
   margin-top: 0.5rem;
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-style: italic;
   color: var(--c-ink-soft);
 }
 
 .closing__names {
-  font-size: 2.6rem;
+  font-size: 3rem;
 }
 
 .closing__hosts {

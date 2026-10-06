@@ -79,8 +79,8 @@ const pad = (value) => String(value).padStart(2, '0')
 
 .countdown__value {
   font-family: var(--font-serif);
-  font-size: clamp(2.25rem, 1.9rem + 1.5vw, 2.75rem);
-  font-weight: 300;
+  font-size: clamp(2rem, 1.7rem + 1.4vw, 2.5rem);
+  font-weight: 400;
   line-height: 1;
   font-variant-numeric: tabular-nums lining-nums;
 }
@@ -95,7 +95,7 @@ const pad = (value) => String(value).padStart(2, '0')
 
 .countdown__arrived {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-style: italic;
 }
 </style>

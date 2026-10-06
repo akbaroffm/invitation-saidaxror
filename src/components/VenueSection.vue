@@ -1,5 +1,6 @@
 <script setup>
 import SectionReveal from './SectionReveal.vue'
+import sectionIcon from '../assets/decor/icon-venue.svg'
 import { weddingData } from '../data/wedding.js'
 import { t } from '../i18n.js'
 import { getMapLinks } from '../utils/links.js'
@@ -9,6 +10,7 @@ const links = getMapLinks(weddingData.venue.coordinates)
 
 <template>
   <section class="section" aria-labelledby="venue-title">
+    <SectionReveal as="img" :src="sectionIcon" alt="" width="40" height="40" class="section-icon" aria-hidden="true" />
     <SectionReveal as="p" class="eyebrow">{{ t.venue.eyebrow }}</SectionReveal>
     <SectionReveal as="h2" id="venue-title" class="title" :delay="100">{{ t.venue.name }}</SectionReveal>
     <SectionReveal as="address" class="venue__address" :delay="200">{{ t.venue.address }}</SectionReveal>
