@@ -105,7 +105,7 @@ export const weddingData = {
     },
 
     ru: {
-      groom: 'Сайдахрор',
+      groom: 'Саидахрор',
       bride: 'Севара',
       languageLabel: 'Язык',
       seo: {
