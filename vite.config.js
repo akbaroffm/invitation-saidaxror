@@ -11,7 +11,7 @@ const escapeHtml = (value) =>
 
 /** index.html dagi {{placeholder}} larni src/data/wedding.js dan (asosiy tilda) to‘ldiradi. */
 function weddingMeta() {
-  const { seo, images, defaultLocale, namesOrder, content } = weddingData
+  const { seo, defaultLocale, namesOrder, content } = weddingData
   const text = content[defaultLocale]
   const absolute = (path) => (seo.siteUrl ? new URL(path, seo.siteUrl).href : path)
 
@@ -21,8 +21,6 @@ function weddingMeta() {
     description: text.seo.description,
     siteUrl: seo.siteUrl,
     ogImage: absolute(seo.ogImage),
-    heroImage: images.cover,
-    heroImageMobile: images.coverMobile,
   }
 
   return {

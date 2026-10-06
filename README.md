@@ -15,10 +15,8 @@ npm run preview   # tayyor buildni lokal ko‘rish
 
 Barcha ma’lumot va matnlar **`src/data/wedding.js`** faylida: ismlar, sana va vaqt mintaqasi, to‘yxona, xarita havolalari, musiqa, SEO. Komponentlar ichida to‘yga oid matn yo‘q.
 
-Rasmlar `public/images/` papkasida:
-- `hero.jpg` (gorizontal, ~2000px) va `hero-mobile.jpg` (vertikal, ~900×1600) — muqova
-- `couple.jpg` — taklif matni ustidagi arka shaklidagi rasm
-- `og-image.jpg` (1200×630) — Telegram va boshqa ilovalarda havola rasmi
+Taklifnoma rasmsiz, to‘liq tipografik dizaynda (arka ramka, monogramma). Yagona rasm —
+`public/images/og-image.jpg` (1200×630): havola Telegram va boshqa ilovalarda yuborilganda chiqadi.
 
 Musiqa: qo‘shiq faylini `public/music/toylar-muborak.mp3` nomi bilan joylang. Fayl bo‘lmasa, musiqa tugmasi ko‘rinmaydi. Tez yuklanishi uchun 128 kbps MP3 tavsiya etiladi.
 
@@ -54,4 +52,4 @@ src/
 
 ## Mualliflik
 
-Rasmlar: [Unsplash](https://unsplash.com) (Unsplash License) — vaqtinchalik, kelin-kuyovning o‘z rasmlari bilan almashtiring.
+Shriftlar: Cormorant Garamond va Jost — Google Fonts, SIL Open Font License.

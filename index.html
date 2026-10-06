@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#fbf8f3" />
+    <meta name="theme-color" content="#f3ece1" />
 
     <!-- {{ }} ichidagi qiymatlar src/data/wedding.js dan olinadi (vite.config.js ga qarang). -->
     <title>{{title}}</title>
@@ -23,10 +23,6 @@
     <meta name="twitter:image" content="{{ogImage}}" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Muqova rasmi birinchi ko‘rinadigan eng katta element — ilova yuklanmasdan oldin yuklay boshlaymiz. -->
-    <link rel="preload" as="image" href="{{heroImageMobile}}" media="(max-width: 767px)" fetchpriority="high" />
-    <link rel="preload" as="image" href="{{heroImage}}" media="(min-width: 768px)" fetchpriority="high" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

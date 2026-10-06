@@ -1,8 +1,8 @@
 /**
  * Taklifnomaning yagona ma’lumot manbai.
  *
- * Yangi taklifnoma uchun faqat shu faylni tahrirlang va /public/images hamda
- * /public/music ichidagi fayllarni almashtiring. index.html dagi meta teglar
+ * Yangi taklifnoma uchun faqat shu faylni tahrirlang va /public/music dagi
+ * qo‘shiqni hamda /public/images/og-image.jpg (havola rasmi) ni almashtiring. index.html dagi meta teglar
  * build vaqtida shu fayldan (`defaultLocale` tili) olinadi — `seo` o‘zgarsa,
  * dev serverni qayta ishga tushiring.
  *
@@ -25,14 +25,6 @@ export const weddingData = {
   date: '2026-11-14T18:00:00+05:00',
   endDate: '2026-11-14T23:00:00+05:00',
   timeZone: 'Asia/Tashkent',
-
-  images: {
-    cover: '/images/hero.jpg',
-    coverMobile: '/images/hero-mobile.jpg',
-    couple: '/images/couple.jpg',
-    coupleWidth: 900,
-    coupleHeight: 1268,
-  },
 
   venue: {
     // TODO: to‘yxonaning haqiqiy koordinatalari (Google Maps’da joyni bosib
@@ -60,6 +52,7 @@ export const weddingData = {
     // Sayt joylashtirilgach domenni yozing (masalan, 'https://saidaxror-sevara.uz'),
     // shunda Telegram va boshqa ilovalar havola rasmini to‘g‘ri ko‘rsatadi.
     siteUrl: '',
+    // Telegram va boshqa ilovalarda havola bilan chiqadigan rasm (1200×630).
     ogImage: '/images/og-image.jpg',
   },
 
@@ -76,11 +69,9 @@ export const weddingData = {
       cover: {
         label: 'Taklifnoma',
         guestLabel: 'Hurmatli {name}',
-        alt: 'Kelin va kuyov tog‘ yonbag‘rida qo‘l ushlashib ketmoqda',
         openButton: 'Taklifnomani ochish',
       },
       invitation: {
-        imageAlt: 'Kelin va kuyov parda ostida bir-birini quchoqlab turibdi',
         greeting: 'Assalomu alaykum, qadrli mehmon!',
         guestGreeting: 'Assalomu alaykum, hurmatli {name}!',
         intro: 'Hayotimizdagi eng quvonchli kunni Siz bilan birga nishonlashni istaymiz.',
@@ -135,11 +126,9 @@ export const weddingData = {
       cover: {
         label: 'Приглашение',
         guestLabel: 'Приглашение · {name}',
-        alt: 'Жених и невеста идут, держась за руки, по склону гор',
         openButton: 'Открыть приглашение',
       },
       invitation: {
-        imageAlt: 'Жених и невеста обнимаются под фатой',
         greeting: 'Здравствуйте, дорогой гость!',
         guestGreeting: 'Здравствуйте, {name}!',
         intro: 'Мы хотим разделить с вами самый радостный день нашей жизни.',

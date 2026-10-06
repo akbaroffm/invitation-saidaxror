@@ -1,10 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import SectionReveal from './SectionReveal.vue'
-import { weddingData } from '../data/wedding.js'
 import { coupleNames, fill, guestName, t } from '../i18n.js'
 
-const { images } = weddingData
+const initials = computed(() => coupleNames.value.map((name) => name.charAt(0)))
 const greeting = computed(() =>
   guestName ? fill(t.value.invitation.guestGreeting, { name: guestName }) : t.value.invitation.greeting,
 )
@@ -12,14 +11,10 @@ const greeting = computed(() =>
 
 <template>
   <section class="section" aria-labelledby="invitation-names">
-    <SectionReveal as="figure" class="invitation__photo">
-      <img
-        :src="images.couple"
-        :alt="t.invitation.imageAlt"
-        :width="images.coupleWidth"
-        :height="images.coupleHeight"
-        decoding="async"
-      />
+    <SectionReveal class="monogram" aria-hidden="true">
+      <span>{{ initials[0] }}</span>
+      <span class="monogram__amp">&amp;</span>
+      <span>{{ initials[1] }}</span>
     </SectionReveal>
 
     <SectionReveal as="p" class="invitation__greeting" :delay="150">{{ greeting }}</SectionReveal>
@@ -36,20 +31,36 @@ const greeting = computed(() =>
 </template>
 
 <style scoped>
-.invitation__photo {
-  width: min(100%, 15rem);
-  aspect-ratio: 3 / 4;
+/* Ikki halqali monogramma — rasm o‘rnida */
+.monogram {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  width: 6.5rem;
+  height: 6.5rem;
   margin-bottom: 1rem;
-  overflow: hidden;
-  border-radius: 999px 999px 0 0;
-  background: var(--c-cream);
+  border: 1px solid var(--c-champagne);
+  border-radius: 50%;
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1;
 }
 
-.invitation__photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 30%;
+.monogram::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(176, 145, 95, 0.32);
+  border-radius: 50%;
+}
+
+.monogram__amp {
+  font-size: 0.55em;
+  color: var(--c-gold);
 }
 
 .invitation__greeting {
