@@ -131,9 +131,11 @@ button {
   display: block;
 }
 
+/* Tik (kursiv emas) shakl: kursiv Cormorant'da "&" eski "Et" ga o‘xshab, tanilmaydi. */
 .names .names__amp {
   margin-block: 0.12em;
   font-size: 0.5em;
+  font-style: normal;
   line-height: 1.2;
   color: var(--c-gold);
 }

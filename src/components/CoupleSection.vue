@@ -60,6 +60,7 @@ const greeting = computed(() =>
 
 .monogram__amp {
   font-size: 0.55em;
+  font-style: normal;
   color: var(--c-gold);
 }
 
